@@ -39,4 +39,14 @@ Router.map(function() {
   this.route('tabs.three', {path: '/tabs/three', layoutTemplate: 'tabsLayout'});
   this.route('tabs.four', {path: '/tabs/four', layoutTemplate: 'tabsLayout'});
   this.route('userAccounts');
+
+  this.route('addpost');
+  this.route('postView', {path: '/postView/:_id',
+  subscriptions: function(){
+    Meteor.subscribe('post', this.params._id);
+  },
+  data: function(){
+    return Posts.findOne(this.params._id);
+  }
+});
 });
