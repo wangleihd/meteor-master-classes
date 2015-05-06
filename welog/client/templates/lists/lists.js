@@ -10,24 +10,24 @@ Template.lists.helpers({
   	return Posts.find();
   },
   email: function(){
-  	return Meteor.user().email[0].address;
+  	return Meteor.user().emails[0].address;
   },
   getuser: function(){
     console.log('getuser', this);
     return Meteor.users.findOne({_id: this.authorId});
   },
-  getUerPictuereOrDefault: function(){
-    return 'https://randomuser.me/api/portraits/thumb/men/1.jpg';
+  getUserPictureOrDefault: function(){
+    return 'https://randomuser.me/api/portraits/thumb/men/01.jpg';
   },
 
-  get_avatar_url: function(){
+  get_avatar_url: function(usr){
     console.log('user is', usr);
-    return Avatar.getUrl(url);
+    return Avatar.getUrl(usr);
   },
 });
 
 Template.lists.events({
-  'click .veiwpost': function(){
+  'click .viewpost': function(){
     return Router.go("/postView/" + this._id);
   }
 });

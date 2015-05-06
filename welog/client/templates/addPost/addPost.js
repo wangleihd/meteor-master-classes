@@ -4,8 +4,8 @@ Template.addPost.events({
 		console.log('Submitting...');
 		sections = Session.get('sections');
 		console.log(sections);
-		Title = (_ref = t.find('input[name=tile]')) != null ? _ref.value: void 0;
-		body = (_ref = t.find('input[name=body')) != null ? _ref.value: void 0;
+		title = (_ref = t.find('input[name=title]')) != null ? _ref.value: void 0;
+		body = (_ref = t.find('input[name=body]')) != null ? _ref.value: void 0;
 
 		newPost = {
 			title: title,
